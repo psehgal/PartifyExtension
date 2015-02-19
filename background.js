@@ -15,7 +15,7 @@ var getSong = function() {
 		//chrome.browserAction.setBadgeText({text: (results.length).toString()});
 		for (var i = 0; i < results.length; i++) {
 			//chrome.extension.getBackgroundPage().console.log(results[i].title);
-			songChange(resutls[i].title);
+			songChange(results[i].title);
 		}
 	});
 	t = setTimeout(function() { getSong() }, 1000);
