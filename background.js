@@ -1,3 +1,4 @@
+
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.type) {
         case "get-song":
@@ -25,4 +26,5 @@ var getSong = function() {
 			chrome.extension.getBackgroundPage().console.log(results[i].title);
 		}
 	});
+	t = setTimeout(function() { getSong() }, 1000);
 }
