@@ -21,9 +21,17 @@ var getSong = function() {
 	t = setTimeout(function() { getSong() }, 1000);
 }
 
+//Registers if there is a new song playling in the playlist. If so, perform the designated songChangeAction
 var songChange = function(song){
 	if(song != currentSong){
 		currentSong = song;
 		chrome.extension.getBackgroundPage().console.log(song);
 	}
+}
+
+
+//SHIV this is where the post would happen
+//The song parameter is the name of the currently playing song in the playlist
+var songChangeAction = function(song){
+	chrome.extension.getBackgroundPage().console.log(song);
 }
