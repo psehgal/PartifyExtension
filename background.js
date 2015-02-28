@@ -18,7 +18,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
 var createPlaylistWithLogin = function() {
 	playlistId = makeid();
-	var url = "http://localhost:8081/login/";
+	var url = "http://partify.herokuapp.com/login/";
 	var http = new XMLHttpRequest();
 	var fullUrl = url + playlistId;
 	chrome.tabs.create( {url : fullUrl} );
