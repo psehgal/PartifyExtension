@@ -44,6 +44,7 @@ var songChange = function(song){
 	if(song != currentSong){
 		currentSong = song;
 		chrome.extension.getBackgroundPage().console.log(song);
+		document.querySelectorAll('[id^=collection-app-spotify]')[0].src = document.querySelectorAll('[id^=collection-app-spotify]')[0].src
 	}
 }
 
