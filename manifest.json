@@ -4,7 +4,12 @@
   "version": "0.0.1",
   "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
 
-  "permissions":["tabs", "*://partify.herokuapp.com/*"],
+  "permissions":[
+  	 "tabs",
+  	 "notifications",
+  	 "*://partify.herokuapp.com/*",
+  	 "*://play.spotify.com/*"
+  ],
 
   "browser_action": {
     "default_icon": {
@@ -18,5 +23,12 @@
   "background" : {
   	"scripts": ["background.js"],
   	"persistent": true
-  }
+  },
+
+  "content_scripts" : [
+  	{
+  		"matches": ["*://play.spotify.com/*"],
+  		"js": ["get_collection_iframe_id.js"]
+  	}
+  ]
 }
