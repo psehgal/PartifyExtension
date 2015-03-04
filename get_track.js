@@ -1,6 +1,7 @@
+
 var nowPlayingFrame = document.getElementById("app-player");
 
-function iframeRef( frameRef ) {
+function iframeRef(frameRef) {
     return frameRef.contentWindow ? frameRef.contentWindow.document : frameRef.contentDocument
 }
 

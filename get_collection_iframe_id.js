@@ -6,6 +6,7 @@ for (var i = 0; i < iframes.length; i++) {
 	if (currentIframeId.indexOf(playlistIframeId) > -1) {
 		var iFrameId = currentIframeId;
 		console.log(iFrameId);
-		iframes[i].src = iframes[i].src
+		iframes[i].src = iframes[i].src;
 	}
 }
+
