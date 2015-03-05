@@ -1,4 +1,3 @@
-
 var nowPlayingFrame = document.getElementById("app-player");
 
 function iframeRef(frameRef) {
@@ -7,7 +6,7 @@ function iframeRef(frameRef) {
 
 var track = iframeRef(nowPlayingFrame).getElementById("track-name");
 var trackUrl = track.innerHTML;
-var trackId = trackUrl.substring(40, 63);
+var trackId = trackUrl.substring(40, 62);
 
 chrome.extension.sendMessage({
     type: "track-id",

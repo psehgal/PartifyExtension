@@ -40,6 +40,11 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
         		message: sendBack
         	});
         	break;
+        case "percent-complete":
+        	console.log("percent complete: " + request.percentComplete);
+        	break;
+        case "get-percent-complete":
+        	getTrackPercent();
         break;
     }
     return true;
@@ -70,8 +75,9 @@ var login = function() {
 
 var updateTrackId = function(song) {
 	if (song != currentSong) {
-		currentSong = song
-		chrome.extension.getBackgroundPage().console.log(song);
+		chrome.extension.getBackgroundPage().console.log("current: " + currentSong);
+		currentSong = song;
+		chrome.extension.getBackgroundPage().console.log("got: " + song);
 		injectScript("get_collection_iframe_id.js");
 	}
 }
@@ -131,6 +137,10 @@ function getUserIdOrName() {
 			user = userLocal;
 		}
 	})
+}
+
+function getTrackPercent() {
+	injectScript("get_track_percent_complete.js");
 }
 
 function injectScript(script) {

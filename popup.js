@@ -43,6 +43,11 @@ window.onload = function() {
     		type: "get-user"
     	})
     }
+    document.getElementById("percent_button").onclick = function() {
+        chrome.extension.sendMessage({
+            type: "get-percent-complete"
+        })
+    }
 }
 
 function renderMessage(message) {
